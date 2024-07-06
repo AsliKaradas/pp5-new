@@ -1,0 +1,30 @@
+.post-list {
+    padding: 2rem;
+}
+
+.post {
+    background-color: #444;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.post-actions button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post-actions button:hover {
+    background-color: #cc0000;
+}

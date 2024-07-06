@@ -13,13 +13,26 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     likes_count = models.PositiveIntegerField(default=0)
 
+    def __str__(self):
+        return self.title
+
+    def shortened_content(self):
+        return self.content[:20]
+
 class Like(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('post', 'user')
+
 
 class Comment(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.content[:20]

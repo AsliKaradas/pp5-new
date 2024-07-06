@@ -16,3 +16,5 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
 
 
+def index(request):
+    return render(request, 'index.html')

@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-%pzk_nc5w0n1-jlxf&)w()bs1j5bv8v%+#c4f=)bl5b^ow8%u6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-aslikaradas-pp5new-xhihpwg7f9l.ws.codeinstitute-ide.net']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-aslikaradas-pp5new-xhihpwg7f9l.ws.codeinstitute-ide.net'
+]
 
 # Application definition
 
@@ -42,6 +45,15 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+}
 AUTH_USER_MODEL = 'myapp.CustomUser'
 
 MIDDLEWARE = [
@@ -62,7 +74,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
