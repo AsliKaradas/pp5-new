@@ -8,10 +8,8 @@
 }
 
 .navbar-logo a {
-    background: linear-gradient(to right, #ff0000, #0000ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.5rem;
+    color: Black;
+    font-size: 4.5rem;
     text-decoration: none;
 }
 
@@ -25,14 +23,6 @@
 }
 
 .navbar-links a {
-    background: linear-gradient(to right, #ff0000, #0000ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: bl;
     text-decoration: none;
-}
-
-h1 {
-    background: linear-gradient(to right, #ff0000, #0000ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
