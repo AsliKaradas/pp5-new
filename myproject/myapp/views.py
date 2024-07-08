@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Post, Like, Comment
 from .serializers import PostSerializer, LikeSerializer, CommentSerializer
+from django.http import JsonResponse
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()

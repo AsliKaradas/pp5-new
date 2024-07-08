@@ -6,18 +6,17 @@ class CustomUser(AbstractUser):
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
 
 class Post(models.Model):
+    title = models.CharField(max_length=100, default='')
+    caption = models.TextField()
+    content = models.TextField(default='')
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='posts/')
-    caption = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     likes_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title
-
-    def shortened_content(self):
-        return self.content[:20]
 
 class Like(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

@@ -21,6 +21,9 @@ from myapp.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
     path('api/', include('myapp.urls')),
+    path('accounts/', include('django.contrib.auth.urls')), 
     path('', TemplateView.as_view(template_name='index.html')),
+
 ]
